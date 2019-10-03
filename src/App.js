@@ -13,7 +13,7 @@ const App = () => {
   const [query, setQuery] = useState('chicken');
 
 
-  useEffect( () => {
+  useEffect(() => {
     getRecipes();
   }, [query]); //by adding an empty set of arrays, my page doesn't render every single
 
@@ -24,7 +24,7 @@ const App = () => {
     console.log(data.hits);
   };
 
-  const updateSearch = e =>{
+  const updateSearch = e => {
     setSearch(e.target.value);
   };
 
@@ -36,17 +36,19 @@ const App = () => {
 
   return (
     <div className="App">
-      <form className="search-form" onSubmit={getSearch}>
-        <input className="form-control" type="text" placeholder="search here for the ingredient of your choice" value={search} onChange={updateSearch}/>
-        <button className="btn btn-danger" type="button">search </button>
-      </form>
+      <div class="container">
+        <form className="search-form" onSubmit={getSearch}>
+          <input className="form-control" type="text" placeholder="search here for the ingredient of your choice" value={search} onChange={updateSearch} />
+          <button className="btn btn-danger" type="button">search </button>
+        </form>
+      </div>
       <div className="recipes">
-          {recipes.map(recipe => (<Recipe 
-           title={recipe.recipe.label} 
-           image={recipe.recipe.image}
-           ingredients={recipe.recipe.ingredients}
-           calories={recipe.recipe.calories}
-           key={recipe.recipe.label}/>))}
+        {recipes.map(recipe => (<Recipe
+          title={recipe.recipe.label}
+          image={recipe.recipe.image}
+          ingredients={recipe.recipe.ingredients}
+          calories={recipe.recipe.calories}
+          key={recipe.recipe.label} />))}
       </div>
     </div>
   );
