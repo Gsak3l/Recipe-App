@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Recipe = ({title, calories, image}) => {
+const Recipe = ({title, calories, image, ingredients}) => {
     return(
         <div>
             <h1>{title}</h1>
-            <p>{calories}</p>
-            <img src={image} alt=""></img>
+            <img src={image} className="img-fluid" alt="Responsive image"></img>
+            <ul className="list-group">Ingredients: {ingredients.map(ingredients=>(<li className="list-group-item">{ingredients.text}</li>))}</ul>
+            <p>Calories: {calories}</p>
         </div>
     );
 }
