@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Recipe from "./Recipe";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 const App = () => {
   //api stuff
@@ -38,23 +35,19 @@ const App = () => {
   }
 
   return (
-    <div className="container">
-      <form className="form-group" onSubmit={getSearch}>
+    <div className="App">
+      <form className="search-form" onSubmit={getSearch}>
         <input className="form-control" type="text" placeholder="search here for the ingredient of your choice" value={search} onChange={updateSearch}/>
-        <button className="btn btn-dark" type="button">search </button>
+        <button className="btn btn-danger" type="button">search </button>
       </form>
-      <Container>
-        <Row>
-          <Col sm>
-          {recipes.map(recipe => (<Recipe
+      <div className="recipes">
+          {recipes.map(recipe => (<Recipe 
            title={recipe.recipe.label} 
            image={recipe.recipe.image}
            ingredients={recipe.recipe.ingredients}
            calories={recipe.recipe.calories}
            key={recipe.recipe.label}/>))}
-          </Col>
-        </Row>
-      </Container>
+      </div>
     </div>
   );
 };

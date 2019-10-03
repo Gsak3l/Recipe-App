@@ -1,0 +1,18 @@
+.App
+{
+    min-height: 100vh;
+    background-color: #353A40;
+}
+.search-form
+{
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.recipes
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
