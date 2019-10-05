@@ -39,7 +39,7 @@ const App = () => {
       <div class="container">
         <form className="search-form" onSubmit={getSearch}>
           <input className="form-control" type="text" placeholder="search here for the ingredient of your choice" value={search} onChange={updateSearch} />
-          <button className="btn btn-danger" type="button">search </button>
+          <button className="btn btn-danger" onClick={getSearch} type="button">search </button>
         </form>
       </div>
       <div className="recipes">
